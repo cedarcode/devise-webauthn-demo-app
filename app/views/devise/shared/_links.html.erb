@@ -1,0 +1,13 @@
+<%- if controller_name != 'sessions' %>
+  <p class="text-sm">
+    Already have an account?
+    <%= link_to "Log in", new_session_path(resource_name), class: "text-primary" %>
+  </p>
+<% end %>
+
+<%- if controller_name != 'registrations' %>
+  <p class="text-sm">
+    Don't have an account?
+    <%= link_to "Sign up", new_registration_path(resource_name), class: "text-primary" %>
+  </p>
+<% end %>
