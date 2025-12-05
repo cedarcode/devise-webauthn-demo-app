@@ -6,10 +6,10 @@ WebAuthn.configure do |config|
   # Multiple origins can be used when needed. Using more than one will imply you MUST configure rp_id explicitely.
   # please see [webauthn-ruby Advanced Configuration section](https://github.com/cedarcode/webauthn-ruby/blob/master/docs/advanced_configuration.md)
   # instead of adding multiple origins.
-  # config.allowed_origins = [ "https://auth.example.com" ]
+  config.allowed_origins = [ "http://localhost:3000" ]
 
   # Relying Party name for display purposes
-  # config.rp_name = "Example Inc."
+  config.rp_name = "Devise Webauthn Demo App"
 
   # Optionally configure a client timeout hint, in milliseconds.
   # This hint specifies how long the browser should wait for any
