@@ -1,14 +1,22 @@
-<%= form_with(
-  url: second_factor_webauthn_credentials_path(resource),
-  method: :post,
-  data: {
-    action: "webauthn-credentials#create:prevent",
-    controller: "webauthn-credentials",
-    webauthn_credentials_options_param: @options
-  }
-) do |form| %>
-  <%= form.hidden_field(:public_key_credential, data: { "webauthn-credentials-target": "credentialHiddenInput" }) %>
-  <%= form.label :name, 'Security Key name' %>
-  <%= form.text_field :name, required: true %>
-  <%= form.submit 'Create Security Key' %>
-<% end %>
+<div class="card card-border bg-base-100 mx-auto">
+  <div class="card-body items-center space-y-1">
+    <h2 class="card-title">Add a Passkey</h2>
+    <%= form_with(
+      url: second_factor_webauthn_credentials_path(resource),
+      method: :post,
+      class: "card-actions flex flex-col items-center space-y-3",
+      data: {
+        action: "webauthn-credentials#create:prevent",
+        controller: "webauthn-credentials",
+        webauthn_credentials_options_param: @options
+      }
+    ) do |form| %>
+      <%= form.hidden_field(:public_key_credential, data: { "webauthn-credentials-target": "credentialHiddenInput" }) %>
+      <fieldset class="fieldset">
+        <%= form.label :name, 'Security Key name', class: "label! fieldset-legend" %>
+        <%= form.text_field :name, required: true, class: "input" %>
+      </fieldset>
+      <%= form.submit 'Create Security Key', class: "btn btn-primary text-white w-full" %>
+    <% end %>
+  </div>
+</div>
