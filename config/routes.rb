@@ -10,12 +10,10 @@ Rails.application.routes.draw do
   # get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
 
   # Defines the root path route ("/")
-  root "home#index"
+  root "webauthn_credentials#index"
 
   devise_for :users, controllers: {
     passkeys: "users/passkeys",
     second_factor_webauthn_credentials: "users/second_factor_webauthn_credentials",
   }
-
-  resources :webauthn_credentials, only: [:index]
 end
