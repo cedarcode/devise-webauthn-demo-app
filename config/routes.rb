@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: {
     passkeys: "users/passkeys",
+    second_factor_webauthn_credentials: "users/second_factor_webauthn_credentials",
   }
 
   resources :webauthn_credentials, only: [:index]
