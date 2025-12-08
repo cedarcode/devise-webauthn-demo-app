@@ -21,4 +21,10 @@ class Users::PasskeysController < Devise::PasskeysController
       options
     end
   end
+
+  private
+
+  def after_update_path
+    root_path
+  end
 end

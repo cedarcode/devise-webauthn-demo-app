@@ -18,4 +18,10 @@ class Users::SecondFactorWebauthnCredentialsController < Devise::SecondFactorWeb
     # Store challenge in session for later verification
     session[:webauthn_challenge] = @options.challenge
   end
+
+  private
+
+  def after_update_path
+    root_path
+  end
 end
