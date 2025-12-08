@@ -12,7 +12,9 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "home#index"
 
-  devise_for :users
+  devise_for :users, controllers: {
+    passkeys: "users/passkeys",
+  }
 
   resources :webauthn_credentials, only: [:index]
 end
