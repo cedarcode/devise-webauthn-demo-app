@@ -1,0 +1,47 @@
+<div class="mx-auto">
+  <div class="card w-96 bg-base-100 shadow-xl">
+    <div class="card-body">
+      <div class="card-actions justify-between items-center mb-4">
+        <h2 class="card-title">Passkeys</h2>
+        <%= button_to "Add passkey", new_user_passkey_path, method: :get, class: "btn btn-transparent" %>
+      </div>
+      <% if @passkeys.any? %>
+        <ul class="list bg-base-100 shadow-xs">
+          <% @passkeys.each do |passkey| %>
+            <li class="list-row">
+              <div class="space-y-1">
+                <p><%= passkey.name %></p>
+                <div class="text-xs font-semibold opacity-60">Created on <%= passkey.created_at.strftime("%B %d, %Y") %></div>
+              </div>
+            </li>
+          <% end %>
+        </ul>
+      <% else %>
+        <p>No passkeys registered.</p>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="card w-96 bg-base-100 shadow-xl mt-6">
+    <div class="card-body">
+      <div class="card-actions justify-between items-center mb-4">
+        <h2 class="card-title">Security Keys</h2>
+        <%= button_to "Add security key", new_user_second_factor_webauthn_credential_path, method: :get, class: "btn btn-transparent" %>
+      </div>
+      <% if @second_factor_credentials.any? %>
+        <ul class="list bg-base-100 shadow-xs">
+          <% @second_factor_credentials.each do |second_factor_credential| %>
+            <li class="list-row">
+              <div class="space-y-1">
+                <p><%= second_factor_credential.name %></p>
+                <div class="text-xs font-semibold opacity-60">Created on <%= second_factor_credential.created_at.strftime("%B %d, %Y") %></div>
+              </div>
+            </li>
+          <% end %>
+        </ul>
+      <% else %>
+        <p>No security keys registered.</p>
+      <% end %>
+    </div>
+  </div>
+</div>

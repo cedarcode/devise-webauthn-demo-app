@@ -13,4 +13,6 @@ Rails.application.routes.draw do
   root "home#index"
 
   devise_for :users
+
+  resources :webauthn_credentials, only: [:index]
 end
