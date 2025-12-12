@@ -1,0 +1,12 @@
+<div class="card card-border bg-base-100 mx-auto">
+  <div class="card-body items-center space-y-1">
+    <h2 class="card-title">Add a Security Key</h2>
+    <%= security_key_creation_form_for(resource, form_classes: "card-actions flex flex-col items-center space-y-3") do |form| %>
+      <fieldset class="fieldset">
+        <%= form.label :name, 'Security Key name', class: "label! fieldset-legend" %>
+        <%= form.text_field :name, required: true, class: "input" %>
+      </fieldset>
+      <%= form.submit 'Create Security Key', class: "btn btn-primary text-white w-full" %>
+    <% end %>
+  </div>
+</div>
