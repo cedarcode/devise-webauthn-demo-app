@@ -11,7 +11,7 @@
           <div class="space-y-1">
             <div class="space-y-3">
               <%= f.label :username, class: "block text-sm font-medium" %>
-              <%= f.text_field :username, autofocus: true, autocomplete: "username", class: "input w-full outline-none #{f.object.errors.include?(:username) ? "input-error" : "" }" %>
+              <%= f.text_field :username, required: true, autofocus: true, autocomplete: "username", class: "input w-full outline-none #{f.object.errors.include?(:username) ? "input-error" : "" }" %>
             </div>
             <%= render "devise/shared/field_error_messages", object: f.object, field: :username %>
           </div>
@@ -19,7 +19,7 @@
           <div class="space-y-1">
             <div class="space-y-3">
               <%= f.label :password, class: "block text-sm font-medium" %>
-              <%= f.password_field :password, autocomplete: "new-password", class: "input w-full outline-none #{f.object.errors.include?(:password) ? "input-error" : "" }" %>
+              <%= f.password_field :password, required: true, autocomplete: "new-password", class: "input w-full outline-none #{f.object.errors.include?(:password) ? "input-error" : "" }" %>
             </div>
             <% unless f.object.errors.include?(:password) %>
               <em class="label text-xs">(<%= resource.class::PASSWORD_LENGTH.min %> characters minimum)</em>
@@ -30,7 +30,7 @@
           <div class="space-y-1">
             <div class="space-y-3">
               <%= f.label :password_confirmation, class: "block text-sm font-medium" %>
-              <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "input w-full outline-none #{f.object.errors.include?(:password_confirmation) ? "input-error" : "" }" %>
+              <%= f.password_field :password_confirmation, required: true, autocomplete: "new-password", class: "input w-full outline-none #{f.object.errors.include?(:password_confirmation) ? "input-error" : "" }" %>
             </div>
             <%= render "devise/shared/field_error_messages", object: f.object, field: :password_confirmation %>
           </div>
