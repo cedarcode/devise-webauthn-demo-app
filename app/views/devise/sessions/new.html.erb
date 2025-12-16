@@ -10,12 +10,12 @@
         <div class="space-y-7">
           <div class="space-y-3">
             <%= f.label :username, class: "block text-sm font-medium" %>
-            <%= f.text_field :username, autofocus: true, autocomplete: "username", class: "input w-full outline-none" %>
+            <%= f.text_field :username, required: true, autofocus: true, autocomplete: "username", class: "input w-full outline-none" %>
           </div>
 
           <div class="space-y-3">
             <%= f.label :password, class: "block text-sm font-medium" %>
-            <%= f.password_field :password, autocomplete: "current-password", class: "input w-full outline-none" %>
+            <%= f.password_field :password, required: true, autocomplete: "current-password", class: "input w-full outline-none" %>
           </div>
 
           <div class="space-y-3">
