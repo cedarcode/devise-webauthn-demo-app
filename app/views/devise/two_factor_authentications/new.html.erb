@@ -1,13 +1,15 @@
-<div class="card card-border bg-base-100 mx-auto">
-  <div class="card-body items-center">
+<div class="card card-border">
+  <div class="card-body items-center gap-8">
     <h2 class="card-title">Two-Factor Authentication</h2>
-    <p>Authenticate using your passkey or security key.</p>
+    <div class="card-actions gap-4 justify-center">
+      <p>Authenticate using your passkey or security key.</p>
 
-    <%= login_with_security_key_button(
-      'Use security key',
-      resource: @resource,
-      form_classes: "card-actions justify-center mt-4",
-      button_classes: "btn btn-primary text-white"
-    ) %>
+      <%= login_with_security_key_button(
+        'Use security key',
+        resource: @resource,
+        form_classes: "w-full",
+        button_classes: "btn btn-primary text-white w-full"
+      ) %>
+    </div>
   </div>
 </div>
