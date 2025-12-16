@@ -1,11 +1,12 @@
-<div class="card card-border bg-base-100 mx-auto">
-  <div class="card-body items-center space-y-1">
+<div class="card card-border">
+  <div class="card-body items-center gap-8">
     <h2 class="card-title">Add a Passkey</h2>
-    <%= passkey_creation_form_for(resource, form_classes: "card-actions flex flex-col items-center space-y-3") do |form| %>
-      <fieldset class="fieldset">
-        <%= form.label :name, 'Passkey name', class: "label! fieldset-legend" %>
-        <%= form.text_field :name, required: true, class: "input" %>
-      </fieldset>
+    <%= passkey_creation_form_for(resource, form_classes: "card-actions gap-5") do |form| %>
+      <div class="w-full space-y-3">
+        <%= form.label :name, 'Passkey name', class: "block text-sm font-medium" %>
+        <%= form.text_field :name, required: true, class: "input w-full outline-none" %>
+      </div>
+
       <%= form.submit 'Create Passkey', class: "btn btn-primary text-white w-full" %>
     <% end %>
   </div>
