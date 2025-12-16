@@ -1,6 +1,6 @@
-<div class="card w-96 bg-base-100 shadow-xl">
-  <div class="card-body">
-    <div class="card-actions justify-between items-center mb-4">
+<div class="card card-border gap-8 rounded-xl shadow-sm">
+  <div class="card-body gap-6">
+    <div class="card-actions justify-between items-center">
       <h2 class="card-title">Passkeys</h2>
       <%= button_to "Add passkey", new_user_passkey_path, method: :get, class: "btn btn-transparent" %>
     </div>
@@ -26,9 +26,9 @@
   </div>
 </div>
 
-<div class="card w-96 bg-base-100 shadow-xl mt-6">
-  <div class="card-body">
-    <div class="card-actions justify-between items-center mb-4">
+<div class="card card-border gap-8 rounded-xl shadow-sm mt-6">
+  <div class="card-body gap-6">
+    <div class="card-actions justify-between items-center">
       <h2 class="card-title">Security Keys</h2>
       <%= button_to "Add security key", new_user_second_factor_webauthn_credential_path, method: :get, class: "btn btn-transparent" %>
     </div>
