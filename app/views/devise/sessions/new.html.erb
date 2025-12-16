@@ -1,32 +1,30 @@
-<div class="w-full max-w-sm self-center">
-  <div class="flex flex-col gap-6">
-    <div class="card gap-8 rounded-xl border border-neutral-200 p-6 shadow-sm">
-      <div class="card-title">
-        <div class="leading-none font-semibold">
-          Sign In
+<div class="flex flex-col gap-6">
+  <div class="card gap-8 rounded-xl border border-neutral-200 p-6 shadow-sm">
+    <div class="card-title">
+      <div class="leading-none font-semibold">
+        Sign In
+      </div>
+    </div>
+    <%= form_with(scope: :user, url: session_path(resource_name)) do |f| %>
+      <div class="space-y-7">
+        <div class="space-y-3">
+          <%= f.label :username, class: "block text-sm font-medium" %>
+          <%= f.text_field :username, required: true, autofocus: true, autocomplete: "username", class: "input w-full outline-none" %>
+        </div>
+
+        <div class="space-y-3">
+          <%= f.label :password, class: "block text-sm font-medium" %>
+          <%= f.password_field :password, required: true, autocomplete: "current-password", class: "input w-full outline-none" %>
+        </div>
+
+        <div class="space-y-3">
+          <%= f.submit "Sign in", class: "btn btn-primary text-white w-full" %>
+          <p class="text-neutral-500 text-sm leading-normal text-center">
+            Don't have an account?
+            <%= link_to "Sign up", new_registration_path(resource_name), class: "text-primary hover:text-primary/80 hover:underline" %>
+          </p>
         </div>
       </div>
-      <%= form_with(scope: :user, url: session_path(resource_name)) do |f| %>
-        <div class="space-y-7">
-          <div class="space-y-3">
-            <%= f.label :username, class: "block text-sm font-medium" %>
-            <%= f.text_field :username, required: true, autofocus: true, autocomplete: "username", class: "input w-full outline-none" %>
-          </div>
-
-          <div class="space-y-3">
-            <%= f.label :password, class: "block text-sm font-medium" %>
-            <%= f.password_field :password, required: true, autocomplete: "current-password", class: "input w-full outline-none" %>
-          </div>
-
-          <div class="space-y-3">
-            <%= f.submit "Sign in", class: "btn btn-primary text-white w-full" %>
-            <p class="text-neutral-500 text-sm leading-normal text-center">
-              Don't have an account?
-              <%= link_to "Sign up", new_registration_path(resource_name), class: "text-primary hover:text-primary/80 hover:underline" %>
-            </p>
-          </div>
-        </div>
-      <% end %>
-    </div>
+    <% end %>
   </div>
 </div>
