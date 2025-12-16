@@ -1,6 +1,7 @@
 <div class="card card-border">
   <div class="card-body items-center gap-8">
     <h2 class="card-title">Add a Passkey</h2>
+
     <%= passkey_creation_form_for(resource, form_classes: "card-actions gap-5") do |form| %>
       <div class="w-full space-y-3">
         <%= form.label :name, 'Passkey name', class: "block text-sm font-medium" %>
