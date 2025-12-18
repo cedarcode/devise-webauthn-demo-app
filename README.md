@@ -1,24 +1,34 @@
-# README
+# Devise WebAuthn Demo App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A Rails application demonstrating how to use `devise-webauthn` gem to integrate WebAuthn passwordless authentication and 2FA into a Devise-based authentication system.
 
-Things you may want to cover:
+## Want to try it?
 
-* Ruby version
+### Run it locally
 
-* System dependencies
+#### Prerequisites
 
-* Configuration
+- Ruby 3.4.7
 
-* Database creation
+#### Setup
 
-* Database initialization
+```bash
+$ git clone https://github.com/cedarcode/devise-webauthn-demo-app
+$ cd devise-webauthn-demo-app/
+$ bundle install
+$ bundle exec rails db:setup
+```
 
-* How to run the test suite
+#### Running
 
-* Services (job queues, cache servers, search engines, etc.)
+```bash
+$ bundle exec rails s
+```
 
-* Deployment instructions
+Now you can visit http://localhost:3000 to play with the demo site.
 
-* ...
+### Usage
+
+1. Sign up at `/users/sign_up`
+2. Register a passkey or security key from the dashboard
+3. Try passwordless login or 2FA on your next sign-in
