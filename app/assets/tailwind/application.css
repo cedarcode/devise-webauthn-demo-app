@@ -5,3 +5,9 @@
 @plugin "./daisyui.mjs" {
   themes: cmyk --default;
 }
+
+@plugin "./daisyui-theme.mjs" {
+  name: "cmyk";
+  default: true;
+  --color-success: green;
+}
