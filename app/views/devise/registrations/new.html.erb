@@ -1,26 +1,37 @@
-<div class="mx-auto">
-  <%= form_with(model: resource, url: registration_path(resource_name)) do |f| %>
-    <fieldset class="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
-      <legend class="fieldset-legend">Sign Up</legend>
+<div class="card card-border rounded-xl shadow-sm">
+  <div class="card-body gap-8">
+    <div class="card-title leading-none">
+      Sign Up
+    </div>
+    <%= form_with(model: resource, url: registration_path(resource_name), class: "card-actions gap-7 *:w-full") do |f| %>
+      <div>
+        <%= f.label :username, class: "block text-sm font-medium mb-3" %>
+        <%= f.text_field :username, required: true, autofocus: true, autocomplete: "username", class: "input w-full outline-none #{f.object.errors.include?(:username) ? "input-error mb-1" : "" }" %>
+        <%= render "devise/shared/field_error_messages", object: f.object, field: :username %>
+      </div>
 
-      <%= f.label :username, class: "label" %>
-      <%= f.text_field :username, autofocus: true, autocomplete: "username", class: "input #{f.object.errors.include?(:username) ? "input-error" : "" }" %>
-      <%= render "devise/shared/field_error_messages", object: f.object, field: :username %>
+      <div>
+        <%= f.label :password, class: "block text-sm font-medium mb-3" %>
+        <%= f.password_field :password, required: true, autocomplete: "new-password", class: "input w-full outline-none #{f.object.errors.include?(:password) ? "input-error mb-1" : "" }" %>
+        <% unless f.object.errors.include?(:password) %>
+          <em class="label text-xs">(<%= resource.class::PASSWORD_LENGTH.min %> characters minimum)</em>
+        <% end %>
+        <%= render "devise/shared/field_error_messages", object: f.object, field: :password %>
+      </div>
 
-      <%= f.label :password, class: "label mt-3" %>
-      <%= f.password_field :password, autocomplete: "new-password", class: "input #{f.object.errors.include?(:password) ? "input-error" : "" }" %>
-      <% unless f.object.errors.include?(:password) %>
-        <em class="label">(<%= resource.class::PASSWORD_LENGTH.min %> characters minimum)</em>
-      <% end %>
-      <%= render "devise/shared/field_error_messages", object: f.object, field: :password %>
+      <div>
+        <%= f.label :password_confirmation, class: "block text-sm font-medium mb-3" %>
+        <%= f.password_field :password_confirmation, required: true, autocomplete: "new-password", class: "input w-full outline-none #{f.object.errors.include?(:password_confirmation) ? "input-error mb-1" : "" }" %>
+        <%= render "devise/shared/field_error_messages", object: f.object, field: :password_confirmation %>
+      </div>
 
-      <%= f.label :password_confirmation, class: "label mt-3" %>
-      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "input #{f.object.errors.include?(:password_confirmation) ? "input-error" : "" }" %>
-      <%= render "devise/shared/field_error_messages", object: f.object, field: :password_confirmation %>
-
-      <%= f.submit "Sign up", class: "btn btn-primary text-white mt-4" %>
-    </fieldset>
-  <% end %>
-
-  <%= render "devise/shared/links" %>
+      <div class="space-y-3">
+        <%= f.submit "Sign up", class: "btn btn-primary text-white w-full" %>
+        <p class="text-neutral-500 text-sm leading-normal text-center">
+          Already have an account?
+          <%= link_to "Log in", new_session_path(resource_name), class: "text-primary hover:text-primary/80 hover:underline" %>
+        </p>
+      </div>
+    <% end %>
+  </div>
 </div>
