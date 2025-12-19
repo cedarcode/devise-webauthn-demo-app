@@ -7,9 +7,6 @@ class User < ApplicationRecord
 
   PASSWORD_LENGTH = 6..128
 
-  validates_presence_of     :username
-  validates_uniqueness_of   :username, case_sensitive: false
-  validates_presence_of     :password
-  validates_confirmation_of :password
-  validates_length_of       :password, within: PASSWORD_LENGTH, allow_blank: true
+  validates :username, presence: true, uniqueness: { case_sensitive: false }
+  validates :password, presence: true, confirmation: true, length: { within: PASSWORD_LENGTH }, allow_blank: true
 end
