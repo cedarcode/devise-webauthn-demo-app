@@ -47,8 +47,8 @@ builder:
 
 # Use a different ssh user than root
 #
-# ssh:
-#   user: app
+ssh:
+  user: ubuntu
 
 # Use a persistent storage volume.
 #
