@@ -4,7 +4,11 @@ A Rails application demonstrating how to use `devise-webauthn` gem to integrate 
 
 ## Want to try it?
 
-### Run it locally
+### Option 1 — Visit the hosted version
+
+- Visit https://devise-webauthn.cedarcode.com and try it!
+
+### Option 2 – Run it locally
 
 #### Prerequisites
 
