@@ -3,24 +3,36 @@
     <div class="card-title leading-none">
       Sign In
     </div>
-    <%= form_with(scope: :user, url: session_path(resource_name), class: "card-actions gap-7 *:space-y-3 *:w-full") do |f| %>
-      <div>
-        <%= f.label :username, class: "block text-sm font-medium" %>
-        <%= f.text_field :username, required: true, autofocus: true, autocomplete: "username", class: "input w-full outline-none" %>
-      </div>
+    <div class="space-y-3">
+      <%= form_with(scope: :user, url: session_path(resource_name), class: "card-actions gap-7 *:space-y-3 *:w-full") do |f| %>
+        <div>
+          <%= f.label :username, class: "block text-sm font-medium" %>
+          <%= f.text_field :username, required: true, autofocus: true, autocomplete: "username", class: "input w-full outline-none" %>
+        </div>
 
-      <div>
-        <%= f.label :password, class: "block text-sm font-medium" %>
-        <%= f.password_field :password, required: true, autocomplete: "current-password", class: "input w-full outline-none" %>
-      </div>
+        <div>
+          <%= f.label :password, class: "block text-sm font-medium" %>
+          <%= f.password_field :password, required: true, autocomplete: "current-password", class: "input w-full outline-none" %>
+        </div>
 
-      <div>
-        <%= f.submit "Sign in", class: "btn btn-primary text-white w-full" %>
-        <p class="text-neutral-500 text-sm leading-normal text-center">
-          Don't have an account?
-          <%= link_to "Sign up", new_registration_path(resource_name), class: "text-primary hover:text-primary/80 hover:underline" %>
-        </p>
-      </div>
-    <% end %>
+        <div>
+          <%= f.submit "Sign in", class: "btn btn-primary text-white w-full" %>
+        </div>
+      <% end %>
+
+      <div class="divider text-sm text-neutral-500">OR</div>
+
+      <%= login_with_passkey_button(
+        "Sign in with passkey",
+        session_path: session_path(resource_name),
+        button_classes: "btn btn-primary btn-outline w-full hover:text-white focus:text-white",
+        form_classes: "w-full"
+      ) %>
+
+      <p class="text-neutral-500 text-sm leading-normal text-center">
+        Don't have an account?
+        <%= link_to "Sign up", new_registration_path(resource_name), class: "text-primary hover:text-primary/80 hover:underline" %>
+      </p>
+    </div>
   </div>
 </div>
