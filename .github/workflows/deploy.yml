@@ -46,6 +46,12 @@ jobs:
         with:
           bundler-cache: true
 
+      - name: Set up Docker Buildx for cache
+        uses: docker/setup-buildx-action@v3
+
+      - name: Expose GitHub Runtime for cache
+        uses: crazy-max/ghaction-github-runtime@v3
+
       - name: Run deploy command
         run: bundle exec kamal deploy
         env:
