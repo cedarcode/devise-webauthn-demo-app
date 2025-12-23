@@ -23,8 +23,6 @@ builder:
   arch: amd64
 
 env:
-  clear:
-    WEBAUTHN_ORIGIN: 'https://devise-webauthn.cedarcode.com'
   secret:
     - RAILS_MASTER_KEY
 
