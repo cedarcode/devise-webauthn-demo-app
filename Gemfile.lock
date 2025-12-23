@@ -98,8 +98,8 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
-    devise-webauthn (0.2.2)
-      devise (~> 4.9)
+    devise-webauthn (0.3.0)
+      devise (>= 4.9)
       webauthn (~> 3.0)
     dotenv (3.2.0)
     drb (2.2.3)
@@ -327,7 +327,7 @@ PLATFORMS
 
 DEPENDENCIES
   devise (~> 4.9)
-  devise-webauthn (~> 0.2.2)
+  devise-webauthn (~> 0.3.0)
   importmap-rails (~> 2.2)
   kamal (~> 2.10)
   propshaft

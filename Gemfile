@@ -25,7 +25,7 @@ gem "importmap-rails", "~> 2.2"
 
 gem "turbo-rails", "~> 2.0"
 
-gem "devise-webauthn", "~> 0.2.2"
+gem "devise-webauthn", "~> 0.3.0"
 
 gem "stimulus-rails", "~> 1.3"
 
