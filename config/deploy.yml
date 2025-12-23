@@ -1,0 +1,30 @@
+service: devise-webauthn-demo
+
+image: devise-webauthn-demo
+
+servers:
+  web:
+    hosts:
+      - 3.233.189.168
+    options:
+      memory: 200MiB
+
+proxy:
+  host: devise-webauthn.cedarcode.com
+  ssl: true
+  app_port: 3000
+
+registry:
+  server: 864100757851.dkr.ecr.us-east-1.amazonaws.com
+  username: AWS
+  password: <%= %x(aws ecr get-login-password) %>
+
+builder:
+  arch: amd64
+
+env:
+  secret:
+    - RAILS_MASTER_KEY
+
+ssh:
+  user: ubuntu

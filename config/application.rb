@@ -7,7 +7,7 @@ require "active_model/railtie"
 require "active_record/railtie"
 # require "active_storage/engine"
 require "action_controller/railtie"
-# require "action_mailer/railtie"
+require "action_mailer/railtie" # TODO: remove when Devise releases a version that includes https://github.com/heartcombo/devise/commit/af112a2f65f3835c3f983276e0d166897427c19a
 # require "action_mailbox/engine"
 # require "action_text/engine"
 require "action_view/railtie"
