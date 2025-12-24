@@ -27,8 +27,6 @@ gem "turbo-rails", "~> 2.0"
 
 gem "devise-webauthn", "~> 0.3.0"
 
-gem "stimulus-rails", "~> 1.3"
-
 group :development, :deploy do
   gem "kamal", "~> 2.10"
 end
