@@ -5,7 +5,6 @@ ignore:
 - config/environments/production.rb:
   - Style/GlobalStdStream
 - config/routes.rb:
-  - Style/HashSyntax
   - Style/TrailingCommaInHashLiteral
 - db/migrate/20251204200731_devise_create_users.rb:
   - Layout/EmptyLines
