@@ -1,0 +1,41 @@
+# Auto generated files with errors to ignore.
+# Remove from this list as you refactor files.
+---
+ignore:
+- Gemfile:
+  - Layout/SpaceInsidePercentLiteralDelimiters
+- app/models/user.rb:
+  - Layout/ArgumentAlignment
+  - Layout/SpaceInsideHashLiteralBraces
+- app/models/webauthn_credential.rb:
+  - Layout/SpaceInsideHashLiteralBraces
+- config/application.rb:
+  - Style/Proc
+- config/environments/development.rb:
+  - Layout/SpaceInsideHashLiteralBraces
+  - Style/StringLiterals
+- config/environments/production.rb:
+  - Layout/SpaceInsideHashLiteralBraces
+  - Layout/SpaceInsideArrayLiteralBrackets
+  - Layout/ExtraSpacing
+  - Style/GlobalStdStream
+- config/environments/test.rb:
+  - Layout/SpaceInsideHashLiteralBraces
+  - Style/StringLiterals
+- config/initializers/devise.rb:
+  - Style/StringLiterals
+- config/initializers/webauthn.rb:
+  - Layout/SpaceInsideArrayLiteralBrackets
+- config/routes.rb:
+  - Style/HashSyntax
+  - Style/TrailingCommaInHashLiteral
+- db/migrate/20251204200731_devise_create_users.rb:
+  - Layout/ExtraSpacing
+  - Layout/EmptyLines
+- test/application_controller_test_case.rb:
+  - Layout/TrailingEmptyLines
+- test/controllers/users/passkeys_controller_test.rb:
+  - Style/TrailingCommaInHashLiteral
+  - Layout/SpaceInsideHashLiteralBraces
+- test/controllers/users/second_factor_webauthn_credentials_controller_test.rb:
+  - Layout/SpaceInsideHashLiteralBraces
