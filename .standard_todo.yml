@@ -2,8 +2,6 @@
 # Remove from this list as you refactor files.
 ---
 ignore:
-- config/application.rb:
-  - Style/Proc
 - config/environments/development.rb:
   - Style/StringLiterals
 - config/environments/production.rb:
