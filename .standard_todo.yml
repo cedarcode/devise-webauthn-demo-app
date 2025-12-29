@@ -3,11 +3,8 @@
 ---
 ignore:
 - config/environments/production.rb:
-  - Layout/SpaceInsideArrayLiteralBrackets
   - Layout/ExtraSpacing
   - Style/GlobalStdStream
-- config/initializers/webauthn.rb:
-  - Layout/SpaceInsideArrayLiteralBrackets
 - config/routes.rb:
   - Style/HashSyntax
   - Style/TrailingCommaInHashLiteral

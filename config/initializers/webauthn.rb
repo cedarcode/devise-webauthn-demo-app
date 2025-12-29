@@ -6,7 +6,7 @@ WebAuthn.configure do |config|
   # Multiple origins can be used when needed. Using more than one will imply you MUST configure rp_id explicitely.
   # please see [webauthn-ruby Advanced Configuration section](https://github.com/cedarcode/webauthn-ruby/blob/master/docs/advanced_configuration.md)
   # instead of adding multiple origins.
-  config.allowed_origins = [ Rails.configuration.webauthn_origin ]
+  config.allowed_origins = [Rails.configuration.webauthn_origin]
 
   # Relying Party name for display purposes
   config.rp_name = "Devise Webauthn Demo App"
