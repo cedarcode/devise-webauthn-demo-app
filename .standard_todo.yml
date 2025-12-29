@@ -2,16 +2,10 @@
 # Remove from this list as you refactor files.
 ---
 ignore:
-- config/environments/development.rb:
-  - Style/StringLiterals
 - config/environments/production.rb:
   - Layout/SpaceInsideArrayLiteralBrackets
   - Layout/ExtraSpacing
   - Style/GlobalStdStream
-- config/environments/test.rb:
-  - Style/StringLiterals
-- config/initializers/devise.rb:
-  - Style/StringLiterals
 - config/initializers/webauthn.rb:
   - Layout/SpaceInsideArrayLiteralBrackets
 - config/routes.rb:
