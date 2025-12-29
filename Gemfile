@@ -15,6 +15,8 @@ gem "tzinfo-data", platforms: %i[ windows jruby ]
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "pry-byebug"
+
+  gem "standard", "~> 1.52"
 end
 
 gem "tailwindcss-rails", "~> 4.4"
