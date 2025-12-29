@@ -3,7 +3,6 @@
 ---
 ignore:
 - app/models/user.rb:
-  - Layout/ArgumentAlignment
   - Layout/SpaceInsideHashLiteralBraces
 - app/models/webauthn_credential.rb:
   - Layout/SpaceInsideHashLiteralBraces
