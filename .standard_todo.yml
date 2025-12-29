@@ -4,11 +4,7 @@
 ignore:
 - config/environments/production.rb:
   - Style/GlobalStdStream
-- config/routes.rb:
-  - Style/TrailingCommaInHashLiteral
 - db/migrate/20251204200731_devise_create_users.rb:
   - Layout/EmptyLines
 - test/application_controller_test_case.rb:
   - Layout/TrailingEmptyLines
-- test/controllers/users/passkeys_controller_test.rb:
-  - Style/TrailingCommaInHashLiteral

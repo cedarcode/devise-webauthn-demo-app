@@ -35,7 +35,7 @@ class Users::PasskeysControllerTest < ApplicationControllerTestCase
     assert_difference("@user.webauthn_credentials.count", 1) do
       post :create, params: {
         name: "My Passkey",
-        public_key_credential: credential.to_json,
+        public_key_credential: credential.to_json
       }
     end
 
@@ -61,7 +61,7 @@ class Users::PasskeysControllerTest < ApplicationControllerTestCase
     assert_no_difference("@user.webauthn_credentials.count") do
       post :create, params: {
         name: "Invalid Passkey",
-        public_key_credential: credential.to_json,
+        public_key_credential: credential.to_json
       }
     end
 
