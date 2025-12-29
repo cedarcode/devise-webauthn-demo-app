@@ -2,8 +2,6 @@
 # Remove from this list as you refactor files.
 ---
 ignore:
-- Gemfile:
-  - Layout/SpaceInsidePercentLiteralDelimiters
 - app/models/user.rb:
   - Layout/ArgumentAlignment
   - Layout/SpaceInsideHashLiteralBraces
