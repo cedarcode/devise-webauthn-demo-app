@@ -79,7 +79,7 @@ class Users::PasskeysControllerTest < ApplicationControllerTestCase
     )
 
     assert_difference("@user.webauthn_credentials.count", -1) do
-      delete :destroy, params: { id: passkey.id }
+      delete :destroy, params: {id: passkey.id}
     end
 
     assert_redirected_to root_path

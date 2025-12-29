@@ -2,22 +2,15 @@
 # Remove from this list as you refactor files.
 ---
 ignore:
-- app/models/user.rb:
-  - Layout/SpaceInsideHashLiteralBraces
-- app/models/webauthn_credential.rb:
-  - Layout/SpaceInsideHashLiteralBraces
 - config/application.rb:
   - Style/Proc
 - config/environments/development.rb:
-  - Layout/SpaceInsideHashLiteralBraces
   - Style/StringLiterals
 - config/environments/production.rb:
-  - Layout/SpaceInsideHashLiteralBraces
   - Layout/SpaceInsideArrayLiteralBrackets
   - Layout/ExtraSpacing
   - Style/GlobalStdStream
 - config/environments/test.rb:
-  - Layout/SpaceInsideHashLiteralBraces
   - Style/StringLiterals
 - config/initializers/devise.rb:
   - Style/StringLiterals
@@ -33,6 +26,3 @@ ignore:
   - Layout/TrailingEmptyLines
 - test/controllers/users/passkeys_controller_test.rb:
   - Style/TrailingCommaInHashLiteral
-  - Layout/SpaceInsideHashLiteralBraces
-- test/controllers/users/second_factor_webauthn_credentials_controller_test.rb:
-  - Layout/SpaceInsideHashLiteralBraces
