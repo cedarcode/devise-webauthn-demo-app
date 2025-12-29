@@ -4,5 +4,3 @@
 ignore:
 - config/environments/production.rb:
   - Style/GlobalStdStream
-- test/application_controller_test_case.rb:
-  - Layout/TrailingEmptyLines
