@@ -3,13 +3,11 @@
 ---
 ignore:
 - config/environments/production.rb:
-  - Layout/ExtraSpacing
   - Style/GlobalStdStream
 - config/routes.rb:
   - Style/HashSyntax
   - Style/TrailingCommaInHashLiteral
 - db/migrate/20251204200731_devise_create_users.rb:
-  - Layout/ExtraSpacing
   - Layout/EmptyLines
 - test/application_controller_test_case.rb:
   - Layout/TrailingEmptyLines
