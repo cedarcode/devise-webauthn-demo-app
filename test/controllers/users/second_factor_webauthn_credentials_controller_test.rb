@@ -87,7 +87,7 @@ class Users::SecondFactorWebauthnCredentialsControllerTest < ApplicationControll
     )
 
     assert_difference("@user.webauthn_credentials.count", -1) do
-      delete :destroy, params: { id: security_key.id }
+      delete :destroy, params: {id: security_key.id}
     end
 
     assert_redirected_to root_path

@@ -9,4 +9,3 @@ class ApplicationControllerTestCase < ActionController::TestCase
     @request.env["devise.mapping"] = Devise.mappings[:user]
   end
 end
-

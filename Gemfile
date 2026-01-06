@@ -10,11 +10,14 @@ gem "sqlite3", ">= 2.1"
 gem "puma", ">= 5.0"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem "tzinfo-data", platforms: %i[ windows jruby ]
+gem "tzinfo-data", platforms: %i[windows jruby]
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "pry-byebug"
+
+  gem "standard", "~> 1.52"
+  gem "standard-rails", "~> 1.6"
 end
 
 gem "tailwindcss-rails", "~> 4.4"

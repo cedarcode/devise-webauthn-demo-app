@@ -16,7 +16,7 @@ Rails.application.configure do
   config.eager_load = ENV["CI"].present?
 
   # Configure public file server for tests with cache-control for performance.
-  config.public_file_server.headers = { "cache-control" => "public, max-age=3600" }
+  config.public_file_server.headers = {"cache-control" => "public, max-age=3600"}
 
   # Show full error reports.
   config.consider_all_requests_local = true
@@ -40,5 +40,5 @@ Rails.application.configure do
   # Raise error when a before_action's only/except options reference missing actions.
   config.action_controller.raise_on_missing_callback_actions = true
 
-  config.webauthn_origin = 'http://localhost:3030'
+  config.webauthn_origin = "http://localhost:3030"
 end
