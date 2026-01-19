@@ -98,8 +98,8 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
-    devise-webauthn (0.2.2)
-      devise (~> 4.9)
+    devise-webauthn (0.3.0)
+      devise (>= 4.9)
       webauthn (~> 3.0)
     dotenv (3.2.0)
     drb (2.2.3)
@@ -270,8 +270,6 @@ GEM
       net-sftp (>= 2.1.2)
       net-ssh (>= 2.8.0)
       ostruct
-    stimulus-rails (1.3.4)
-      railties (>= 6.0.0)
     stringio (3.2.0)
     tailwindcss-rails (4.4.0)
       railties (>= 7.0.0)
@@ -327,7 +325,7 @@ PLATFORMS
 
 DEPENDENCIES
   devise (~> 4.9)
-  devise-webauthn (~> 0.2.2)
+  devise-webauthn (~> 0.3.0)
   importmap-rails (~> 2.2)
   kamal (~> 2.10)
   propshaft
@@ -335,7 +333,6 @@ DEPENDENCIES
   puma (>= 5.0)
   rails (~> 8.1.2)
   sqlite3 (>= 2.1)
-  stimulus-rails (~> 1.3)
   tailwindcss-rails (~> 4.4)
   turbo-rails (~> 2.0)
   tzinfo-data
