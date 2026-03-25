@@ -28,5 +28,5 @@ gem "turbo-rails", "~> 2.0"
 gem "devise-webauthn", "~> 0.3.1"
 
 group :development, :deploy do
-  gem "kamal", "~> 2.10"
+  gem "kamal", "~> 2.11"
 end
