@@ -19,13 +19,13 @@ end
 
 gem "tailwindcss-rails", "~> 4.4"
 
-gem "devise", "~> 4.9"
+gem "devise", path: "../devise"
 
 gem "importmap-rails", "~> 2.2"
 
 gem "turbo-rails", "~> 2.0"
 
-gem "devise-webauthn", "~> 0.3.1"
+gem "devise-webauthn", path: "../devise-webauthn"
 
 group :development, :deploy do
   gem "kamal", "~> 2.10"

@@ -2,7 +2,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable, :rememberable,
-         :passkey_authenticatable, :webauthn_two_factor_authenticatable,
+         :passkey_authenticatable, :two_factor_authenticatable, two_factor_methods: [:webauthn],
          authentication_keys: [:username]
 
   PASSWORD_LENGTH = 6..128
