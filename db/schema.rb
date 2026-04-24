@@ -10,16 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2025_12_05_201513) do
+ActiveRecord::Schema[8.1].define(version: 2026_04_22_212041) do
   create_table "users", force: :cascade do |t|
     t.datetime "created_at", null: false
+    t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
+    t.integer "failed_attempts", default: 0, null: false
+    t.datetime "locked_at"
+    t.string "otp_auth_secret"
+    t.datetime "otp_challenge_expires"
+    t.boolean "otp_enabled", default: false, null: false
+    t.datetime "otp_enabled_on"
+    t.integer "otp_failed_attempts", default: 0, null: false
+    t.boolean "otp_mandatory", default: false, null: false
+    t.string "otp_persistence_seed"
+    t.integer "otp_recovery_counter", default: 0, null: false
+    t.string "otp_recovery_secret"
+    t.string "otp_session_challenge"
     t.datetime "remember_created_at"
     t.datetime "reset_password_sent_at"
     t.string "reset_password_token"
     t.datetime "updated_at", null: false
     t.string "username", default: "", null: false
     t.string "webauthn_id"
+    t.index ["otp_challenge_expires"], name: "index_users_on_otp_challenge_expires"
+    t.index ["otp_session_challenge"], name: "index_users_on_otp_session_challenge", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true
     t.index ["webauthn_id"], name: "index_users_on_webauthn_id", unique: true

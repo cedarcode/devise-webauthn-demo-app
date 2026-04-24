@@ -310,4 +310,8 @@ Devise.setup do |config|
   # When set to false, does not sign a user in automatically after their password is
   # changed. Defaults to true, so a user is signed in automatically after changing a password.
   # config.sign_in_after_change_password = true
+
+  # ==> Configuration for :otp (devise-otp)
+  config.otp_issuer = "Devise Webauthn Demo App"
+  config.otp_trust_persistence = false
 end

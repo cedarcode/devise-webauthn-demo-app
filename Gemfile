@@ -27,6 +27,8 @@ gem "turbo-rails", "~> 2.0"
 
 gem "devise-webauthn", path: "../devise-webauthn"
 
+gem "devise-otp", path: "../devise-otp"
+
 group :development, :deploy do
   gem "kamal", "~> 2.10"
 end
