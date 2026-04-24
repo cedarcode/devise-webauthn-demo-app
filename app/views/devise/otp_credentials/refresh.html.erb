@@ -1,0 +1,30 @@
+<div class="card card-border">
+  <div class="card-body items-center gap-8">
+    <h2 class="card-title">Confirm your password</h2>
+    <p class="text-sm text-center">For your security, please re-enter your password to continue.</p>
+
+    <%= form_for(resource, as: resource_name, url: [:refresh, resource_name, :otp_credential], html: { method: :put, class: "w-full space-y-4" }) do |f| %>
+      <% if resource.errors.any? %>
+        <div role="alert" class="alert alert-error alert-soft text-sm">
+          <ul class="list-disc list-inside">
+            <% resource.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div>
+        <%= f.label :username, class: "block text-sm font-medium" %>
+        <%= f.text_field :username, disabled: true, class: "input w-full outline-none" %>
+      </div>
+
+      <div>
+        <%= f.label :password, class: "block text-sm font-medium" %>
+        <%= f.password_field :refresh_password, autocomplete: :off, autofocus: true, class: "input w-full outline-none" %>
+      </div>
+
+      <%= f.submit "Continue", class: "btn btn-primary text-white" %>
+    <% end %>
+  </div>
+</div>

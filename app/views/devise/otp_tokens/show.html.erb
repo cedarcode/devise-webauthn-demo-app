@@ -1,0 +1,23 @@
+<div class="card card-border">
+  <div class="card-body items-center gap-8">
+    <h2 class="card-title">Authenticator app</h2>
+
+    <% if resource.otp_enabled? %>
+      <span class="badge badge-success">Enabled</span>
+
+      <%= render partial: "devise/otp_tokens/token_secret" %>
+
+      <% unless otp_mandatory_on?(resource) %>
+        <%= button_to "Disable authenticator app",
+              otp_token_path_for(resource),
+              method: :delete,
+              class: "btn btn-error text-white",
+              data: { turbo_method: :delete } %>
+      <% end %>
+    <% else %>
+      <span class="badge">Disabled</span>
+      <p class="text-sm text-center">Use an authenticator app like 1Password, Authy, or Google Authenticator to generate time-based codes.</p>
+      <%= link_to "Enable authenticator app", edit_otp_token_path_for(resource), class: "btn btn-primary text-white" %>
+    <% end %>
+  </div>
+</div>

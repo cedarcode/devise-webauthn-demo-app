@@ -1,0 +1,19 @@
+<div class="card card-border">
+  <div class="card-body items-center gap-8">
+    <h2 class="card-title">Recovery codes</h2>
+    <p class="text-sm text-center">Save these somewhere safe. Each code works once if you can't access your authenticator.</p>
+
+    <ul class="list bg-base-100 shadow-xs rounded-lg w-full">
+      <% resource.next_otp_recovery_tokens.each do |seq, code| %>
+        <li class="list-row">
+          <span class="opacity-60 text-xs"><%= seq %></span>
+          <code class="font-mono"><%= code %></code>
+        </li>
+      <% end %>
+    </ul>
+
+    <%= link_to "Download as text file",
+          recovery_otp_token_for(resource_name, format: :text),
+          class: "btn btn-outline" %>
+  </div>
+</div>

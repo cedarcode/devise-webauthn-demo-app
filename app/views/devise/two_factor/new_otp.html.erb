@@ -1,0 +1,54 @@
+<% recovery = params[:recovery] == "true" %>
+
+<div class="card card-border">
+  <div class="card-body items-center gap-8">
+    <h2 class="card-title">Two-Factor Authentication</h2>
+    <div class="card-actions gap-4 justify-center">
+      <% if recovery %>
+        <p>Enter one of your recovery codes.</p>
+      <% else %>
+        <p>Enter the 6-digit code from your authenticator app.</p>
+      <% end %>
+
+      <%= form_with url: two_factor_path(resource_name), method: :post, local: true, class: "w-full space-y-4" do %>
+        <% if recovery %>
+          <%= hidden_field_tag :recovery, "true" %>
+
+          <div>
+            <%= label_tag :token, "Recovery code", class: "block text-sm font-medium" %>
+            <%= text_field_tag :token, nil,
+                  autocomplete: "off",
+                  autofocus: true,
+                  class: "input w-full outline-none tracking-widest text-center font-mono" %>
+          </div>
+        <% else %>
+          <div>
+            <%= label_tag :token, "Code", class: "block text-sm font-medium" %>
+            <%= text_field_tag :token, nil,
+                  autocomplete: "one-time-code",
+                  inputmode: "numeric",
+                  autofocus: true,
+                  maxlength: 6,
+                  class: "input w-full outline-none tracking-widest text-center font-mono" %>
+          </div>
+        <% end %>
+
+        <div class="flex justify-center">
+          <%= submit_tag "Verify", class: "btn btn-primary text-white" %>
+        </div>
+      <% end %>
+
+      <% if recovery_enabled? && !recovery %>
+        <div class="flex flex-col items-center gap-2 w-full">
+          <p class="text-sm text-center">
+            <%= link_to "Use a recovery code instead", new_two_factor_challenge_path(resource_name, :otp, recovery: true) %>
+          </p>
+
+          <div class="text-center text-sm opacity-70">
+            <%= two_factor_method_links(@resource, :otp) %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
