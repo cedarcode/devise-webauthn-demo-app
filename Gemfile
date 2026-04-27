@@ -27,6 +27,8 @@ gem "turbo-rails", "~> 2.0"
 
 gem "devise-webauthn", github: "cedarcode/devise-webauthn", branch: "sr--devise-interface"
 
+gem "devise-otp", github: "cedarcode/devise-otp", branch: "sr--devise-interface"
+
 group :development, :deploy do
   gem "kamal", "~> 2.11"
 end
