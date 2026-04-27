@@ -19,13 +19,13 @@ end
 
 gem "tailwindcss-rails", "~> 4.4"
 
-gem "devise", "~> 4.9"
+gem "devise", github: "cedarcode/devise", branch: "sr--2fa-interface"
 
 gem "importmap-rails", "~> 2.2"
 
 gem "turbo-rails", "~> 2.0"
 
-gem "devise-webauthn", "~> 0.4.0"
+gem "devise-webauthn", github: "cedarcode/devise-webauthn", branch: "sr--devise-interface"
 
 group :development, :deploy do
   gem "kamal", "~> 2.11"

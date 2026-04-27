@@ -5,7 +5,7 @@
       <p>Authenticate using your passkey or security key.</p>
 
       <%= login_with_security_key_form_for(
-        @resource,
+        @authenticating_resource,
         form_classes: "w-full",
       ) do |form| %>
         <%= form.submit "Use security key", class: "btn btn-primary text-white w-full" %>
