@@ -3,7 +3,9 @@
 one:
   username: testuser1
   encrypted_password: <%= Devise::Encryptor.digest(User, 'password123') %>
+  webauthn_id: <%= WebAuthn.generate_user_id %>
 
 two:
   username: testuser2
   encrypted_password: <%= Devise::Encryptor.digest(User, 'password123') %>
+  webauthn_id: <%= WebAuthn.generate_user_id %>
