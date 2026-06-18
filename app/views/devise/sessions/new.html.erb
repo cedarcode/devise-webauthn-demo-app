@@ -22,12 +22,9 @@
 
       <div class="divider text-sm text-neutral-500">OR</div>
 
-      <%= login_with_passkey_button(
-        "Sign in with passkey",
-        session_path: session_path(resource_name),
-        button_classes: "btn btn-primary btn-outline w-full hover:text-white focus:text-white",
-        form_classes: "w-full"
-      ) %>
+      <%= login_with_passkey_form_for(resource_name, class: "w-full") do |form| %>
+        <%= form.submit "Sign in with passkey", class: "btn btn-primary btn-outline w-full hover:text-white focus:text-white" %>
+      <% end %>
 
       <p class="text-neutral-500 text-sm leading-normal text-center">
         Don't have an account?

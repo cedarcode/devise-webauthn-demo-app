@@ -4,12 +4,9 @@
     <div class="card-actions gap-4 justify-center">
       <p>Authenticate using your passkey or security key.</p>
 
-      <%= login_with_security_key_button(
-        'Use security key',
-        resource: @resource,
-        form_classes: "w-full",
-        button_classes: "btn btn-primary text-white w-full"
-      ) %>
+      <%= login_with_security_key_form_for(resource_name, class: "w-full") do |form| %>
+        <%= form.submit "Use security key", class: "btn btn-primary text-white w-full" %>
+      <% end %>
     </div>
   </div>
 </div>
