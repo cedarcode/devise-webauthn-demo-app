@@ -1,27 +1,29 @@
-require "application_controller_test_case"
+require "test_helper"
+require "webauthn/fake_client"
 
-class Users::SecondFactorWebauthnCredentialsControllerTest < ApplicationControllerTestCase
+class Users::SecondFactorWebauthnCredentialsTest < ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
+
   setup do
     @user = users(:one)
   end
 
   test "should redirect to sign in when not authenticated" do
-    get :new
+    get new_user_second_factor_webauthn_credential_path
     assert_redirected_to new_user_session_path
   end
 
   test "should get new when authenticated" do
     sign_in @user
-    get :new
+    get new_user_second_factor_webauthn_credential_path
     assert_response :success
-    assert_not_nil session[:webauthn_challenge]
   end
 
   test "should create security key with valid credential" do
     sign_in @user
 
-    # First, get the new page to set up a challenge
-    get :new
+    # The challenge is now served by a dedicated options endpoint and stored in the session.
+    get user_security_key_registration_options_path
     challenge = session[:webauthn_challenge]
 
     # Create a fake WebAuthn credential
@@ -37,7 +39,7 @@ class Users::SecondFactorWebauthnCredentialsControllerTest < ApplicationControll
     )
 
     assert_difference("@user.webauthn_credentials.count", 1) do
-      post :create, params: {
+      post user_second_factor_webauthn_credentials_path, params: {
         name: "My Security Key",
         public_key_credential: credential.to_json
       }
@@ -51,8 +53,7 @@ class Users::SecondFactorWebauthnCredentialsControllerTest < ApplicationControll
   test "should not create security key without user presence" do
     sign_in @user
 
-    # Get challenge
-    get :new
+    get user_security_key_registration_options_path
     challenge = session[:webauthn_challenge]
 
     # Create credential without user presence (invalid)
@@ -67,7 +68,7 @@ class Users::SecondFactorWebauthnCredentialsControllerTest < ApplicationControll
     )
 
     assert_no_difference("@user.webauthn_credentials.count") do
-      post :create, params: {
+      post user_second_factor_webauthn_credentials_path, params: {
         name: "Invalid Security Key",
         public_key_credential: credential.to_json
       }
@@ -87,7 +88,7 @@ class Users::SecondFactorWebauthnCredentialsControllerTest < ApplicationControll
     )
 
     assert_difference("@user.webauthn_credentials.count", -1) do
-      delete :destroy, params: { id: security_key.id }
+      delete user_second_factor_webauthn_credential_path(security_key)
     end
 
     assert_redirected_to root_path
