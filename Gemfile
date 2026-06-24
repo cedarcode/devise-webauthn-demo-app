@@ -17,7 +17,7 @@ group :development, :test do
   gem "pry-byebug"
 end
 
-gem "tailwindcss-rails", "~> 4.5"
+gem "tailwindcss-rails", "~> 4.6"
 
 gem "devise", "~> 4.9"
 
@@ -28,5 +28,5 @@ gem "turbo-rails", "~> 2.0"
 gem "devise-webauthn", "~> 0.4.0"
 
 group :development, :deploy do
-  gem "kamal", "~> 2.11"
+  gem "kamal", "~> 2.12"
 end
