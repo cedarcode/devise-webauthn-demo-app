@@ -23,7 +23,7 @@ class Users::PasskeysTest < ActionDispatch::IntegrationTest
     sign_in @user
 
     # The challenge is now served by a dedicated options endpoint and stored in the session.
-    get user_passkey_registration_options_path
+    post user_passkey_registration_options_path
     challenge = session[:webauthn_challenge]
 
     # Create a fake WebAuthn credential
@@ -48,7 +48,7 @@ class Users::PasskeysTest < ActionDispatch::IntegrationTest
   test "should not create passkey with invalid credential" do
     sign_in @user
 
-    get user_passkey_registration_options_path
+    post user_passkey_registration_options_path
     challenge = session[:webauthn_challenge]
 
     # Create credential without user verification (invalid for passkeys)
