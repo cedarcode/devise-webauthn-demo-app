@@ -17,7 +17,7 @@ group :development, :test do
   gem "pry-byebug"
 end
 
-gem "tailwindcss-rails", "~> 4.6"
+gem "tailwindcss-rails", "~> 4.7"
 
 gem "devise", "~> 4.9"
 
