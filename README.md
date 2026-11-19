@@ -12,7 +12,7 @@ A Rails application demonstrating how to use `devise-webauthn` gem to integrate 
 
 #### Prerequisites
 
-- Ruby 4.0.9
+- Ruby 4.0.10
 
 #### Setup
 
