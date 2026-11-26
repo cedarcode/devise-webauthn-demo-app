@@ -24,7 +24,7 @@ class Users::SecondFactorWebauthnCredentialsTest < ActionDispatch::IntegrationTe
 
     # The challenge is now served by a dedicated options endpoint and stored in the session.
     post user_security_key_registration_options_path
-    challenge = session[:webauthn_challenge]
+    challenge = session[:security_key_registration_challenge]
 
     # Create a fake WebAuthn credential
     client = WebAuthn::FakeClient.new(
@@ -47,14 +47,14 @@ class Users::SecondFactorWebauthnCredentialsTest < ActionDispatch::IntegrationTe
 
     assert_redirected_to root_path
     assert_equal "Security Key created successfully.", flash[:notice]
-    assert_nil session[:webauthn_challenge]
+    assert_nil session[:security_key_registration_challenge]
   end
 
   test "should not create security key without user presence" do
     sign_in @user
 
     post user_security_key_registration_options_path
-    challenge = session[:webauthn_challenge]
+    challenge = session[:security_key_registration_challenge]
 
     # Create credential without user presence (invalid)
     client = WebAuthn::FakeClient.new(
