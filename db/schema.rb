@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2025_12_05_201513) do
+ActiveRecord::Schema[8.1].define(version: 2026_11_26_192832) do
   create_table "users", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.string "encrypted_password", default: "", null: false
@@ -34,6 +34,8 @@ ActiveRecord::Schema[8.1].define(version: 2025_12_05_201513) do
     t.integer "sign_count", limit: 8
     t.datetime "updated_at", null: false
     t.integer "user_id", null: false
+    t.boolean "discoverable", default: false, null: false
+    t.boolean "uv_initialized", default: false, null: false
     t.index ["external_id"], name: "index_webauthn_credentials_on_external_id", unique: true
     t.index ["user_id"], name: "index_webauthn_credentials_on_user_id"
   end
